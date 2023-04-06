@@ -1,4 +1,3 @@
-/* eslint-disable */
 import puppetteer from 'puppeteer';
 import server from './e2e.server'
 
@@ -8,7 +7,6 @@ describe('Credit Card Validator form', () => {
   let browser = null;
   let page = null;
   const baseUrl = 'http://localhost:8888';
-// eslint-disable-next-line
   beforeAll(async () => {
     await server.start();
 
