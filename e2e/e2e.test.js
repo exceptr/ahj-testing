@@ -12,7 +12,6 @@ describe('Credit Card Validator form', () => {
 
     browser = await puppetteer.launch({
       headless: false, // show gui
-      // args: ["--no-sandbox"],
       slowMo: 50,
       devtools: true, // show devTools
     });
