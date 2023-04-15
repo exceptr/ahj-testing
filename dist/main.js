@@ -1,1 +1,220 @@
-(()=>{"use strict";var t={p:""};const e=t.p+"545145c60c726b397f61.png",i=t.p+"c4e9401087382c69cf65.png",s=t.p+"0ff4424b83cc4a3d0c21.png";class a{constructor(t){this.parentEl=t}static get markup(){return`<div class="widget">\n        <h3>Проверьте номер своей карты</h3>\n        <div class="card-list">\n          <img class="visa" src="${e}" alt="Visa" title="Visa">\n          <img class="mastercard" src="${i}" alt="Mastercard" title="Mastercard">\n          <img class="mir" src="${s}" alt="Mir" title="Mir">\n        </div>\n        <form class="form-inline">\n          <div class="control">\n            <input data-id="form-input" class="form-input" type="text" placeholder="Введите номер карты">\n          </div>\n          <button class="validate-btn">Нажмите для валидации</button>\n        </form>\n        <div class="example-card">Пример номера карты</div>\n        <table>\n          <tr>\n            <td>Visa</td>\n            <td>4916838661195196</td>\n          </tr>\n          <tr>\n            <td>Mastercard</td>\n            <td>5211033546806139</td>\n          </tr>\n          <tr>\n            <td>Мир</td>\n            <td>2200770212727079</td>\n          </tr>\n        </table>\n      </div>\n      `}bindToDOM(){this.parentEl.innerHTML=a.markup}}class r{constructor(t){this.parentEl=t,this.onButton=this.onButton.bind(this),this.valueNone=this.valueNone.bind(this)}static get selector(){return".form-inline"}static get cardListSelector(){return".card-list"}static get inputSelector(){return".form-input"}static get buttonSelector(){return".validate-btn"}static get labelSelector(){return".validator-form"}static get visaSelector(){return".visa"}static get masterCardSelector(){return".mastercard"}static get mirSelector(){return".mir"}init(){this.element=this.parentEl.querySelector(r.selector),this.cardList=this.parentEl.querySelector(r.cardListSelector),this.input=this.element.querySelector(r.inputSelector),this.button=this.element.querySelector(r.buttonSelector),this.label=this.element.querySelector(r.labelSelector),this.visa=this.cardList.querySelector(r.visaSelector),this.masterCard=this.cardList.querySelector(r.masterCardSelector),this.mir=this.cardList.querySelector(r.mirSelector),this.element.addEventListener("click",this.onButton),this.element.addEventListener("input",this.valueNone)}valueNone(t){t.preventDefault();if(0===this.input.value.length)return this.defaultOpacity()}onButton(t){t.preventDefault();const e=this.input.value;!function(t){let e=0,i=!1;for(let s=(t=t.replace(/\D/g,"")).length-1;s>=0;s--){let a=parseInt(t.charAt(s),10);i&&(a*=2)>9&&(a-=9),e+=a,i=!i}return e%10==0}(e)?(this.inValid(),this.defaultOpacity()):(this.valid(),function(t){return(t=t.replace(/\D/g,"")).length>=13&&t.length<=19&&4==+t[0]}(e)&&(this.valid(),this.validVisa()),function(t){const e=[(t=t.replace(/\D/g,""))[0]+t[1]];return 16===t.length&&[51,52,53,54,55].includes(Number(e))}(e)&&(this.valid(),this.validMasterCard()),function(t){const e=(t=t.replace(/\D/g,""))[0];return 16===t.length&&2===Number(e)}(e)&&(this.valid(),this.validMir()))}validVisa(){this.defaultOpacity(),this.visa.classList.add("valid"),this.masterCard.style.opacity="0.3",this.mir.style.opacity="0.3"}validMasterCard(){this.defaultOpacity(),this.masterCard.classList.add("valid"),this.visa.style.opacity="0.3",this.mir.style.opacity="0.3"}validMir(){this.defaultOpacity(),this.mir.classList.add("valid"),this.visa.style.opacity="0.3",this.masterCard.style.opacity="0.3"}defaultOpacity(){this.visa.style.opacity="1",this.masterCard.style.opacity="1",this.mir.style.opacity="1"}inValid(){this.input.classList.add("inValid"),this.input.classList.remove("valid"),this.input.style.borderColor="red"}valid(){this.input.classList.add("valid"),this.input.classList.remove("inValid"),this.input.style.borderColor="gray"}}const l=document.querySelector(".validator");new a(l).bindToDOM();new r(l).init()})();
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+/******/ 	// The require scope
+/******/ 	var __webpack_require__ = {};
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/publicPath */
+/******/ 	(() => {
+/******/ 		__webpack_require__.p = "";
+/******/ 	})();
+/******/ 	
+/************************************************************************/
+var __webpack_exports__ = {};
+
+;// CONCATENATED MODULE: ./src/img/visa.png
+const visa_namespaceObject = __webpack_require__.p + "545145c60c726b397f61.png";
+;// CONCATENATED MODULE: ./src/img/mastercard.png
+const mastercard_namespaceObject = __webpack_require__.p + "c4e9401087382c69cf65.png";
+;// CONCATENATED MODULE: ./src/img/mir.png
+const mir_namespaceObject = __webpack_require__.p + "0ff4424b83cc4a3d0c21.png";
+;// CONCATENATED MODULE: ./src/js/modules/CardValidatorWidget.js
+
+
+
+class CardValidatorWidget {
+  constructor(parentEl) {
+    this.parentEl = parentEl;
+  }
+  static get markup() {
+    return `<div class="widget">
+        <h3>Проверьте номер своей карты</h3>
+        <div class="card-list">
+          <img class="visa" src="${visa_namespaceObject}" alt="Visa" title="Visa">
+          <img class="mastercard" src="${mastercard_namespaceObject}" alt="Mastercard" title="Mastercard">
+          <img class="mir" src="${mir_namespaceObject}" alt="Mir" title="Mir">
+        </div>
+        <form class="form-inline">
+          <div class="control">
+            <input data-id="form-input" class="form-input" type="text" placeholder="Введите номер карты">
+          </div>
+          <button class="validate-btn">Нажмите для валидации</button>
+        </form>
+        <div class="example-card">Пример номера карты</div>
+        <table>
+          <tr>
+            <td>Visa</td>
+            <td>4916838661195196</td>
+          </tr>
+          <tr>
+            <td>Mastercard</td>
+            <td>5211033546806139</td>
+          </tr>
+          <tr>
+            <td>Мир</td>
+            <td>2200770212727079</td>
+          </tr>
+        </table>
+      </div>
+      `;
+  }
+  bindToDOM() {
+    this.parentEl.innerHTML = CardValidatorWidget.markup;
+  }
+}
+;// CONCATENATED MODULE: ./src/js/modules/Luna.js
+function luna(value) {
+  value = value.replace(/\D/g, "");
+  let nCheck = 0;
+  let bEven = false;
+  for (let n = value.length - 1; n >= 0; n--) {
+    let nDigit = parseInt(value.charAt(n), 10);
+    if (bEven && (nDigit *= 2) > 9) {
+      nDigit -= 9;
+    }
+    nCheck += nDigit;
+    bEven = !bEven;
+  }
+  return nCheck % 10 == 0;
+}
+;// CONCATENATED MODULE: ./src/js/modules/visaValidate.js
+function visaValidate(value) {
+  value = value.replace(/\D/g, "");
+  return value.length >= 13 && value.length <= 19 && +value[0] === 4;
+}
+;// CONCATENATED MODULE: ./src/js/modules/mastercardValidate.js
+function mastercardValidate(value) {
+  value = value.replace(/\D/g, "");
+  const masterCardList = [51, 52, 53, 54, 55];
+  const firstNumbers = [value[0] + value[1]];
+  return value.length === 16 && masterCardList.includes(Number(firstNumbers));
+}
+;// CONCATENATED MODULE: ./src/js/modules/mirValidate.js
+function mirValidate(value) {
+  value = value.replace(/\D/g, "");
+  const firstNumber = value[0];
+  return value.length === 16 && Number(firstNumber) === 2;
+}
+;// CONCATENATED MODULE: ./src/js/modules/CardValidator.js
+
+
+
+
+class CardValidator {
+  constructor(parentEl) {
+    this.parentEl = parentEl;
+    this.onButton = this.onButton.bind(this);
+    this.valueNone = this.valueNone.bind(this);
+  }
+  static get selector() {
+    return ".form-inline";
+  }
+  static get cardListSelector() {
+    return ".card-list";
+  }
+  static get inputSelector() {
+    return ".form-input";
+  }
+  static get buttonSelector() {
+    return ".validate-btn";
+  }
+  static get labelSelector() {
+    return ".validator-form";
+  }
+  static get visaSelector() {
+    return ".visa";
+  }
+  static get masterCardSelector() {
+    return ".mastercard";
+  }
+  static get mirSelector() {
+    return ".mir";
+  }
+  init() {
+    this.element = this.parentEl.querySelector(CardValidator.selector);
+    this.cardList = this.parentEl.querySelector(CardValidator.cardListSelector);
+    this.input = this.element.querySelector(CardValidator.inputSelector);
+    this.button = this.element.querySelector(CardValidator.buttonSelector);
+    this.label = this.element.querySelector(CardValidator.labelSelector);
+    this.visa = this.cardList.querySelector(CardValidator.visaSelector);
+    this.masterCard = this.cardList.querySelector(CardValidator.masterCardSelector);
+    this.mir = this.cardList.querySelector(CardValidator.mirSelector);
+    this.element.addEventListener("click", this.onButton);
+    this.element.addEventListener("input", this.valueNone);
+  }
+  valueNone(e) {
+    e.preventDefault();
+    const _value = this.input.value;
+    if (_value.length === 0) return this.defaultOpacity();
+  }
+  onButton(e) {
+    e.preventDefault();
+    const value = this.input.value;
+    if (luna(value)) {
+      this.valid();
+      if (visaValidate(value)) {
+        this.valid();
+        this.validVisa();
+      }
+      if (mastercardValidate(value)) {
+        this.valid();
+        this.validMasterCard();
+      }
+      if (mirValidate(value)) {
+        this.valid();
+        this.validMir();
+      }
+    } else {
+      this.inValid();
+      this.defaultOpacity();
+    }
+  }
+  validVisa() {
+    this.defaultOpacity();
+    this.visa.classList.add("valid");
+    this.masterCard.style.opacity = "0.3";
+    this.mir.style.opacity = "0.3";
+  }
+  validMasterCard() {
+    this.defaultOpacity();
+    this.masterCard.classList.add("valid");
+    this.visa.style.opacity = "0.3";
+    this.mir.style.opacity = "0.3";
+  }
+  validMir() {
+    this.defaultOpacity();
+    this.mir.classList.add("valid");
+    this.visa.style.opacity = "0.3";
+    this.masterCard.style.opacity = "0.3";
+  }
+  defaultOpacity() {
+    this.visa.style.opacity = "1";
+    this.masterCard.style.opacity = "1";
+    this.mir.style.opacity = "1";
+  }
+  inValid() {
+    this.input.classList.add("inValid");
+    this.input.classList.remove("valid");
+    this.input.style.borderColor = "red";
+  }
+  valid() {
+    this.input.classList.add("valid");
+    this.input.classList.remove("inValid");
+    this.input.style.borderColor = "gray";
+  }
+}
+;// CONCATENATED MODULE: ./src/js/app.js
+
+
+const validator = document.querySelector(".validator");
+const widget = new CardValidatorWidget(validator);
+widget.bindToDOM();
+const cardValidator = new CardValidator(validator);
+cardValidator.init();
+;// CONCATENATED MODULE: ./src/index.js
+
+
+
+// TODO: write your code in app.js
+/******/ })()
+;
