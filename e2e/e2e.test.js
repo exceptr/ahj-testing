@@ -12,8 +12,8 @@ describe('Credit Card Validator form', () => {
 
     browser = await puppetteer.launch({
       headless: false, // show gui
-      args: ["--no-sandbox"],
-      slowMo: 100,
+      // args: ["--no-sandbox"],
+      slowMo: 50,
       devtools: true, // show devTools
     });
     page = await browser.newPage();
@@ -40,7 +40,6 @@ describe('Credit Card Validator form', () => {
   });
 
   test('Ввод невалидного номера краты', async () => {
-    jest.setTimeout(20000);
     await page.goto(baseUrl);
 
     await page.waitForSelector('.widget');
