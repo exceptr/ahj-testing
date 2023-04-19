@@ -1,4 +1,4 @@
-import luna from "../modules/luna"
+import luna from "../modules/luna";
 import visaValidate from "../modules/visaValidate";
 import mastercardValidate from "../modules/mastercardValidate";
 import mirValidate from "../modules/mirValidate";
