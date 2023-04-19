@@ -62,7 +62,7 @@ class CardValidatorWidget {
     this.parentEl.innerHTML = CardValidatorWidget.markup;
   }
 }
-;// CONCATENATED MODULE: ./src/js/modules/Luna.js
+;// CONCATENATED MODULE: ./src/js/modules/luna.js
 function luna(value) {
   value = value.replace(/\D/g, "");
   let nCheck = 0;
