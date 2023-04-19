@@ -1,6 +1,6 @@
 /* eslint-disable */
 
-import luna from "../modules/Luna";
+import luna from "../modules/luna";
 
 test.each([
     ['visa', '4929167303942723', true],

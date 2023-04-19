@@ -1,7 +1,7 @@
-import luna from "./Luna";
+import luna from "../modules/luna"
 import visaValidate from "../modules/visaValidate";
-import mastercardValidate from "./mastercardValidate";
-import mirValidate from "./mirValidate";
+import mastercardValidate from "../modules/mastercardValidate";
+import mirValidate from "../modules/mirValidate";
 
 export default class CardValidator {
   constructor(parentEl) {
