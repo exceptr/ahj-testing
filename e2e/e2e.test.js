@@ -50,7 +50,6 @@ describe('Credit Card Validator form', () => {
   });
 
   test('Ввод невалидного номера краты', async () => {
-    jest.setTimeout(20000);
     await page.goto(baseUrl);
 
     await page.waitForSelector('.widget');
