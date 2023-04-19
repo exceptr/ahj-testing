@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import mirValidate from "../modules/mirValidate";
 
 test.each([

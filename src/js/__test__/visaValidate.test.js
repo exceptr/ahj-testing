@@ -1,5 +1,5 @@
 import visaValidate from "../modules/visaValidate";
-/* eslint-disable */
+
 test.each([
     ['visa', '4929167303942723', true],
     ['visa', '4556334907029550', true],
@@ -26,4 +26,3 @@ test.each([
       expect(expected).toEqual(received);
     },
   );
-/* eslint-enable */

@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import luna from "../modules/Luna";
 
 test.each([
@@ -26,7 +28,7 @@ test.each([
     ['JCB', '3589076095506636420', true],
     ['JCB', '3589076095506636421', false],
   ])(
-    // eslint-disable
+    // eslint-disable-next-line
     ('Тест Луна, %s: %s'),
     (_, numberCard, expected) => {
       const received = luna(numberCard);

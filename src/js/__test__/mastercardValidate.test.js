@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import mastercardValidate from "../modules/mastercardValidate";
 
 test.each([
