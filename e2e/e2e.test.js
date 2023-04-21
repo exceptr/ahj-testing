@@ -22,9 +22,9 @@ describe('Credit Card Validator form', () => {
     
 
     browser = await puppetteer.launch({
-      headless: false, // show gui
-      slowMo: 50,
-      devtools: true, // show devTools
+      // headless: false,
+      // slowMo: 50,
+      // devtools: true,
     });
     page = await browser.newPage();
   });
